@@ -343,6 +343,14 @@ section.contact {
                     }
                 }
             }
+            &.social-instagram {
+              a {
+                background-color: @brand-instagram;
+                &:hover {
+                  background-color: darken(@brand-instagram, 5%);
+                }
+              }
+            }
             &.social-facebook {
                 a {
                     background-color: @brand-facebook;
@@ -429,6 +437,12 @@ footer {
 .btn-xl {
     padding: 15px 45px;
     font-size: 11px;
+}
+
+.btn-colored {
+  color: white;
+  background-color: @theme-primary;
+  border-color: @theme-primary;
 }
 
 // Extras
