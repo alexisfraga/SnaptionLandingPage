@@ -1,0 +1,21 @@
+#app-screen {
+    /* Makes it so user can scroll on the screen to see stuff */
+    overflow-y: scroll; 
+    display: flex;
+    padding: 10px;
+}
+
+#app-screen>div:first-child {
+    /* Add some space between the two columns */
+    margin-right: 3px;
+}
+
+#app-screen>div {
+    width: 50%;
+}
+
+#app-screen>div>img {
+    max-width: 100%;
+    /* Add space between images on top of each other */
+    margin-bottom: 10px;
+}

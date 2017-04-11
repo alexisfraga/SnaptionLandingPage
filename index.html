@@ -33,6 +33,23 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <link href="css/custom-style.css" rel="stylesheet"/>
+    
+    <!-- Firebase resources -->
+    <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-storage.js"></script>
+    <script src="js/firebase-integration.js"></script>
+    
+    <script>
+        window.onload = function() {
+            var leftDiv = document.getElementById("left-wall");
+            var rightDiv = document.getElementById("right-wall");
+            putWallInDivs(leftDiv, rightDiv);
+        }
+    </script>
 
 </head>
 
@@ -82,9 +99,11 @@
                     <div class="device-container">
                         <div class="device-mockup iphone6_plus portrait white">
                             <div class="device">
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt="">
+                                <div class="screen" id="app-screen">
+                                    <div id="left-wall">
+                                    </div>
+                                    <div id="right-wall">
+                                    </div>
                                 </div>
                                 <div class="button">
                                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
