@@ -84,6 +84,8 @@ var captionsContainerId = "captions-container";
           var pickerDiv = document.createElement('div');
           // Div that will hold all the captions
           var captionsDiv = document.createElement('div');
+          // Div that holds number of upvotes
+          var upvotesDiv = document.createElement('div');
           captionsDiv.id = captionsContainerId;
           // image tag that will be used to hold the main image
           var img = new Image();
@@ -95,6 +97,8 @@ var captionsContainerId = "captions-container";
           div.append(pickerDiv);
           // Add div that has all the captions in it
           div.append(captionsDiv);
+          // Add div with upvote count
+          div.append(upvotesDiv);
           putImageInElem(topGame.imagePath, img);
           addPickerInfoToDiv(pickerDiv, topGame.picker);
           populateCaptions(captionsDiv, topGame);
