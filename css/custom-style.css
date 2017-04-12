@@ -2,10 +2,11 @@
     /* Makes it so user can scroll on the screen to see stuff */
     overflow-y: scroll; 
     display: flex;
+    max-width: 100%;
     padding: 10px;
 }
 
-#app-screen>div:first-child {
+.screen>div:first-child {
     /* Add some space between the two columns */
     margin-right: 3px;
 }
@@ -18,4 +19,31 @@
     max-width: 100%;
     /* Add space between images on top of each other */
     margin-bottom: 10px;
+}
+
+#caption-screen {
+    overflow-y: scroll; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    padding: 10px;
+    color: white;
+}
+
+#caption-screen>div {
+    width: 90%;
+    height: 80%;
+}
+
+#captions-container>div {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    border-bottom: 2px solid grey;
+    
+}
+
+#caption-screen>div>img {
+    max-width: 100%;
+    max-height: 100%;
 }

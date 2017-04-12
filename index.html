@@ -41,13 +41,17 @@
     <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-storage.js"></script>
-    <script src="js/firebase-integration.js"></script>
+    <script src="js/wall-loader.js"></script>
+    <script src="js/caption-loader.js"></script>
     
     <script>
         window.onload = function() {
             var leftDiv = document.getElementById("left-wall");
             var rightDiv = document.getElementById("right-wall");
             putWallInDivs(leftDiv, rightDiv);
+            
+            var captionDiv = document.getElementById("caption-screen");
+            loadCaptionScreen(captionDiv);
         }
     </script>
 
@@ -147,9 +151,9 @@
                     <div class="device-container">
                         <div class="device-mockup iphone6_plus portrait white">
                             <div class="device">
-                                <div class="screen">
-                                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                                    <img src="img/demo-screen-1.jpg" class="img-responsive" alt=""> </div>
+                                <div class="screen" id="caption-screen">
+                                    
+                                </div>
                                 <div class="button">
                                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
                                 </div>
