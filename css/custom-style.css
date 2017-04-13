@@ -3,7 +3,6 @@
     overflow-y: scroll;
     display: flex;
     max-width: 100%;
-    padding: 10px;
     background-color: #d9d9d9;
 
 }
@@ -30,30 +29,31 @@
 
 .caption {
   background-color: white;
-  min-height: 75px;
+  min-height: 50px;
   display: flex;
   margin-bottom: 5px;
-  margin-top: 5px;
   display: flex;
-  padding:10px;
+  padding-left:10px;
+  padding-right:10px;
 }
 
 .userInfo p {
   font-size: 10px;
+  color: black;
 
 }
 
 .userInfo img {
   height: 30px;
   width: 30px;
-  border-radius: 50%;
   margin-top: 10px;
-
+  border-radius: 50%;
 }
 
 .captionText {
   font-size: 10px;
   padding: 10px;
+  color: black;
 }
 
 .captionVotes {
@@ -65,11 +65,24 @@
 .gameImage {
   max-width: 100%;
   height: auto;
-  max-height: 300px;
+  max-height: 400px;
 }
 
 #gameCreator {
   font-size: 15px;
-  color: white;
-  margin: 3px;
+  color: black;
+  margin: 2px;
+}
+
+.wallGameCreator {
+  background-color: white;
+  height: auto;
+}
+
+.wallGameCreator p {
+  color: black;
+  font-size: 10px;
+  float: right;
+  margin-bottom: 0px;
+  padding: 3px;
 }

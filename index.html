@@ -49,7 +49,7 @@
             var leftDiv = document.getElementById("left-wall");
             var rightDiv = document.getElementById("right-wall");
             putWallInDivs(leftDiv, rightDiv);
-            
+
             var captionDiv = document.getElementById("caption-screen");
             loadCaptionScreen(captionDiv);
         }
@@ -104,9 +104,27 @@
                         <div class="device-mockup iphone6_plus portrait white">
                             <div class="device">
                                 <div class="screen" id="app-screen">
-                                    <div id="left-wall">
+                                  <!-- LEFT WALL -->
+                                    <div>
+                                      <!-- Game -->
+                                      <div class="container-fluid">
+                                        <div class="row wallGameCreator">
+                                          <p>gameCreator</p>
+                                        </div>
+                                        <div class="row">
+                                          <img class="gameImage center-block" src="img/demo-screen-1.jpg"></img>
+                                        </div>
+                                      <div class="row caption">
+                                        <div class="col userInfo">
+                                          <img class="center-block userImage" src="img/demo-screen-1.jpg"></img>
+                                          <p >@username</p>
+                                        </div>
+                                        <div class="col captionText">This is the text for a caption. Yay caption text.</div>
+                                      </div>
+                                      <!-- End Left wall -->
                                     </div>
-                                    <div id="right-wall">
+                                    </div>
+                                    <div>
                                     </div>
                                 </div>
                                 <div class="button">
