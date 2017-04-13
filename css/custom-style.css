@@ -1,13 +1,21 @@
-#app-screen {
+#app-screen, #caption-container {
     /* Makes it so user can scroll on the screen to see stuff */
-    overflow-y: scroll; 
+    overflow-y: scroll;
     display: flex;
+    max-width: 100%;
     padding: 10px;
+    background-color: #d9d9d9;
+
 }
 
-#app-screen>div:first-child {
+.screen {
+  background-color: #d9d9d9;
+
     /* Add some space between the two columns */
-    margin-right: 3px;
+}
+
+#left-wall {
+  margin-right: 7px;
 }
 
 #app-screen>div {
@@ -18,4 +26,50 @@
     max-width: 100%;
     /* Add space between images on top of each other */
     margin-bottom: 10px;
+}
+
+.caption {
+  background-color: white;
+  min-height: 75px;
+  display: flex;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  display: flex;
+  padding:10px;
+}
+
+.userInfo p {
+  font-size: 10px;
+
+}
+
+.userInfo img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-top: 10px;
+
+}
+
+.captionText {
+  font-size: 10px;
+  padding: 10px;
+}
+
+.captionVotes {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+
+.gameImage {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+
+#gameCreator {
+  font-size: 15px;
+  color: white;
+  margin: 3px;
 }
