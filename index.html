@@ -33,9 +33,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
     <link href="css/custom-style.css" rel="stylesheet"/>
-    
+
     <!-- Firebase resources -->
     <script src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-app.js"></script>
@@ -43,7 +43,7 @@
     <script src="https://www.gstatic.com/firebasejs/3.7.4/firebase-storage.js"></script>
     <script src="js/wall-loader.js"></script>
     <script src="js/caption-loader.js"></script>
-    
+
     <script>
         window.onload = function() {
             var leftDiv = document.getElementById("left-wall");
@@ -151,12 +151,30 @@
                     <div class="device-container">
                         <div class="device-mockup iphone6_plus portrait white">
                             <div class="device">
-                                <div class="screen" id="caption-screen">
-                                    
+                              <div class="screen" id="caption-container">
+                                <div class="container-fluid" id="caption-screen">
+                                  <div class="row" id="gameCreator">@gameCreator</div>
+                                  <div class="row">
+                                    <img class="gameImage" src="img/demo-screen-1.jpg"></img>
+                                  </div>
+                                  <div class="row caption">
+                                    <div class="userInfo">
+                                      <img class="center-block" src="img/demo-screen-1.jpg"></img>
+                                      <p >@username</p>
+                                    </div>
+                                    <div class="captionText">This is the text for a caption. Yay caption text.</div>
+                                    <div class="text-center captionVotes">100<br>Votes</div>
+                                  </div>
+                                  <div class="row caption">
+                                    <div class="userInfo">
+                                      <img class="center-block" src="img/demo-screen-1.jpg"></img>
+                                      <p >@username</p>
+                                    </div>
+                                    <div class="captionText">This is the text for a caption. Yay caption text.</div>
+                                    <div class="text-center captionVotes">100<br>Votes</div>
+                                  </div>
                                 </div>
-                                <div class="button">
-                                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
-                                </div>
+                              </div>
                             </div>
                         </div>
                     </div>

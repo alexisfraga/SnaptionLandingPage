@@ -40,13 +40,22 @@ var captionsContainerId = "captions-container";
   }
   
   function addPickerInfoToDiv(div, pickerId) {
-      // Picker's profile photo
-      var pickerPhoto = new Image(25, 25);
+      // Div that contains all 
+      var pickerDiv = document.createElement('div');
+      pickerDiv.className = 'userInfo'
+      div.append(pickerDiv);
+      // The user's profile photo
+      var pickerPhoto = new Image();
       pickerPhoto.src = loadingGifPath;
-      var pickerName = document.createElement('span');
-      pickerName.innerHTML = "test";
-      div.appendChild(pickerPhoto);
-      div.appendChild(pickerName);
+      pickerPhoto.className = 'center-block'
+      var photoContainer
+      
+      var pickerName = document.createElement('p');
+      //pickerName.className = "row"
+      pickerName.innerHTML = "ABBY SCHMIEDTHAGHA";
+      pickerDiv.appendChild(pickerPhoto);
+      pickerDiv.appendChild(pickerName);
+      div.appendChild(pickerDiv);
       return getPickerInfo(pickerId).then(function(picker) {
           pickerName.innerHTML = picker.displayName;
           putImageInElem(picker.imagePath, pickerPhoto);
@@ -64,44 +73,64 @@ var captionsContainerId = "captions-container";
   function populateCaptions(div, game) {
       var captions = game.captions;
       for(var captionId in captions) {
+          var captionContainer = document.createElement('div');
+          captionContainer.className = 'row caption';
           var captionHTML = getCaptionHTML(captions[captionId]);
           // Div that contains the caption info (captioner name + photo, text, upvote count)
           var captionDiv = document.createElement('div');
-          addPickerInfoToDiv(captionDiv, captions[captionId].userId);
-          // Span that contains the actual caption text
-          var captionSpan = document.createElement('span');
-          captionSpan.innerHTML = "<br/>" + captionHTML;
-          captionDiv.append(captionSpan);
-          div.append(captionDiv);
+          captionDiv.className = 'captionText'
+          addPickerInfoToDiv(captionContainer, captions[captionId].userId);
+          captionDiv.innerHTML = captionHTML;
+          captionContainer.append(captionDiv);
+          
+          var voteContainer = document.createElement('div');
+          voteContainer.className = "text-center captionVotes";
+          voteContainer.innerHTML = "0 <br/> votes";
+          if(captions[captionId].votes) {
+              voteContainer.innerHTML = Object.keys(captions[captionId].votes).length;
+          }
+          console.log(voteContainer);
+          
+          captionContainer.append(voteContainer);
+          
+          div.append(captionContainer);
       }
   }
 
+  // The div parameter is the whole screen div.
   function loadCaptionScreen(div) {
+      div.innerHTML = "";
       getTopGame().then(function(topGame) {
           // Div that will hold the main game image
           var imgHolder = document.createElement('div');
+          imgHolder.className = 'row';
           // Div that holds the picker's photo and name
           var pickerDiv = document.createElement('div');
+          pickerDiv.id = 'gameCreator';
+          pickerDiv.className = 'row';
           // Div that will hold all the captions
-          var captionsDiv = document.createElement('div');
+//          var captionsDiv = document.createElement('div');
+//          captionsDiv.className = "row caption";
           // Div that holds number of upvotes
           var upvotesDiv = document.createElement('div');
-          captionsDiv.id = captionsContainerId;
+          
           // image tag that will be used to hold the main image
           var img = new Image();
           // Make sure everything is in the correct place before populating them.
           img.src = loadingGifPath;
+          img.className = 'gameImage';
           imgHolder.append(img);
           div.append(imgHolder);
           // Add div that has picker name and photo
           div.append(pickerDiv);
           // Add div that has all the captions in it
-          div.append(captionsDiv);
+//          div.append(captionsDiv);
           // Add div with upvote count
           div.append(upvotesDiv);
+          
           putImageInElem(topGame.imagePath, img);
-          addPickerInfoToDiv(pickerDiv, topGame.picker);
-          populateCaptions(captionsDiv, topGame);
+          //addPickerInfoToDiv(pickerDiv, topGame.picker);
+          populateCaptions(div, topGame);
           console.log(topGame.captions);
       });
   }

@@ -1,6 +1,6 @@
-#app-screen {
+#app-screen, #caption-container {
     /* Makes it so user can scroll on the screen to see stuff */
-    overflow-y: scroll; 
+    overflow-y: scroll;
     display: flex;
     max-width: 100%;
     padding: 10px;
@@ -8,7 +8,6 @@
 
 .screen>div:first-child {
     /* Add some space between the two columns */
-    margin-right: 3px;
 }
 
 #app-screen>div {
@@ -21,16 +20,16 @@
     margin-bottom: 10px;
 }
 
-#caption-screen {
-    overflow-y: scroll; 
+/*
+#caption-screen { 
     display: flex;
     flex-direction: column;
     align-items: center;
     max-width: 100%;
     padding: 10px;
-    color: white;
 }
 
+/*
 #caption-screen>div {
     width: 90%;
     height: 80%;
@@ -40,10 +39,57 @@
     padding-bottom: 5px;
     padding-top: 5px;
     border-bottom: 2px solid grey;
-    
 }
 
 #caption-screen>div>img {
     max-width: 100%;
     max-height: 100%;
+}*/
+
+.caption {
+  background-color: white;
+  height: 75px;
+  display: flex;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.userImage {
+
+}
+
+.userInfo p {
+  font-size: 10px;
+
+}
+
+.userInfo img {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  margin-top: 10px;
+
+}
+
+.captionText {
+  font-size: 10px;
+  padding: 10px;
+}
+
+.captionVotes {
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+.gameImage {
+  max-width: 100%;
+  height: auto;
+  max-height: 300px;
+}
+
+#gameCreator {
+  float: left;
+  font-size: 10px;
+  color: white;
+  margin-left: 3px;
 }
