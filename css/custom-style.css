@@ -28,35 +28,9 @@
     margin-bottom: 10px;
 }
 
-/*
-#caption-screen { 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%;
-    padding: 10px;
-}
-
-/*
-#caption-screen>div {
-    width: 90%;
-    height: 80%;
-}
-
-#captions-container>div {
-    padding-bottom: 5px;
-    padding-top: 5px;
-    border-bottom: 2px solid grey;
-}
-
-#caption-screen>div>img {
-    max-width: 100%;
-    max-height: 100%;
-}*/
-
 .caption {
   background-color: white;
-  height: 75px;
+  min-height: 75px;
   display: flex;
   margin-bottom: 5px;
   margin-top: 5px;
