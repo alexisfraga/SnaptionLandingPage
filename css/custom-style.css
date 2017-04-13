@@ -4,10 +4,18 @@
     display: flex;
     max-width: 100%;
     padding: 10px;
+    background-color: #d9d9d9;
+
 }
 
-.screen>div:first-child {
+.screen {
+  background-color: #d9d9d9;
+
     /* Add some space between the two columns */
+}
+
+#left-wall {
+  margin-right: 7px;
 }
 
 #app-screen>div {
@@ -52,10 +60,8 @@
   display: flex;
   margin-bottom: 5px;
   margin-top: 5px;
-}
-
-.userImage {
-
+  display: flex;
+  padding:10px;
 }
 
 .userInfo p {
@@ -81,6 +87,7 @@
   margin-top: 10px;
 }
 
+
 .gameImage {
   max-width: 100%;
   height: auto;
@@ -88,8 +95,7 @@
 }
 
 #gameCreator {
-  float: left;
-  font-size: 10px;
+  font-size: 15px;
   color: white;
-  margin-left: 3px;
+  margin: 3px;
 }
