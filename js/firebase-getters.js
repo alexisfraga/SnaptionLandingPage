@@ -1,6 +1,3 @@
-  // Initialize Firebase
-  var loadingGifPath = "img/LoadingImage.gif";
-  
   var config = {
     apiKey: "AIzaSyAa9WDzfmNN5j3i8jn0smpHkZypMmxFCMI",
     authDomain: "vertical-prototype-81b3e.firebaseapp.com",
@@ -10,6 +7,30 @@
     messagingSenderId: "917089676170"
   };
   firebase.initializeApp(config);
+
+  function getPickerInfo(id) {
+      var user;
+      return firebase.database().ref("users/" + id).once('value', function(snapshot) {
+          user = snapshot.val();
+      }).then(function() {
+          return user;
+      });
+  }
+  
+  function addPickerNameToDiv(pickerId, div) {
+      return getPickerInfo(pickerId).then(function(picker) {
+          console.log(picker);
+          div.innerHTML = picker.displayName;
+      });
+  }
+  
+  function getCaptionHTML(caption) {
+      var captionText = caption.card.cardText;
+      // TODO sanitize this - currently is vulnerable to running random JS
+      // that a user uses as their input.
+      var userInput = caption.userInput[0];
+      return captionText.replace("%s", "<u>" + userInput + "</u>");
+  }
   
   // Return a list of games
   function getTopGames(numGames) {
@@ -30,37 +51,12 @@
       });
   }
   
-  // This is asynchronous, so images could potentially be inserted out of order.
-  // img should be an Image object
-  function putImageInDiv(imageId, img) {
-      var imgRef = firebase.storage().ref("images/" + imageId);
+  // Async method to insert an image into a given image tag.
+  // Doesn't automatically set loading gif - that should be done
+  // during image creation
+  function putImageInElem(imagePath, elem) {
+      var imgRef = firebase.storage().ref(imagePath);
       imgRef.getDownloadURL().then(function(url) {
-          img.src = url;
-      });
-  }
-  
-  function getTopComment(game, commentContainer) {
-      //get top comment out of game, insert it into the comment container div.
-  }
-  
-  function putWallInDivs(leftDiv, rightDiv) {
-      var allGamesPromise = getTopGames(20);
-      allGamesPromise.then(function(allGames) {
-          for(var gameNum = 0; gameNum < allGames.length; gameNum += 1) {
-              var gameId = allGames[gameNum].id;
-              var div = rightDiv;
-              // switch columns every other game
-              if(gameNum % 2) {
-                  div = leftDiv;
-              }
-              var img = new Image();
-              img.src = loadingGifPath;
-              // Doing it this way ensures games will be loaded in order
-              // Also allows for a loading image
-              div.append(img);
-              // TODO put in top comment
-              // TODO make images clickable to go to game???
-              putImageInDiv(gameId, img);
-          }
+          elem.src = url;
       });
   }
