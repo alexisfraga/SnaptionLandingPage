@@ -28,6 +28,7 @@ var captionsContainerId = "captions-container";
   
   function populateCaptions(game, div) {
       var captions = game.captions;
+      var numDisplayed = 0;
       for(var captionId in captions) {
           var captionContainer = document.createElement('div');
           captionContainer.className = 'row caption';
@@ -48,6 +49,10 @@ var captionsContainerId = "captions-container";
           
           captionContainer.append(voteContainer);
           div.append(captionContainer);
+          numDisplayed ++;
+          if(numDisplayed > 50) {
+              break;
+          }
       }
   }
 
