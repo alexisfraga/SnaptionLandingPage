@@ -38,8 +38,12 @@
 }
 
 .userInfo p {
-  font-size: 10px;
+  font-size: 8px;
   color: black;
+  max-width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
 }
 
@@ -54,11 +58,13 @@
   font-size: 10px;
   padding: 10px;
   color: black;
-}
+  width: 65%;
+  }
 
 .captionVotes {
   font-size: 15px;
   margin-top: 10px;
+  float: right;
 }
 
 
@@ -72,6 +78,10 @@
   font-size: 15px;
   color: black;
   margin: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 75%;
 }
 
 .wallGameCreator {
@@ -85,4 +95,12 @@
   float: right;
   margin-bottom: 0px;
   padding: 3px;
+  max-width: 75%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#caption-screen {
+  width: 100%;
 }
