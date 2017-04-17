@@ -16,9 +16,16 @@
         userInput: {0 : ""}};
       var allComments = game.captions;
       if (allComments) {
+          console.log("Looking at top comments for game: " + game);
           for(var commentId in allComments) {
               var curComment = allComments[commentId];
-              var score = curComment.votes && Object.keys(curComment.votes).length;
+              var score;
+              if(curComment.votes) {
+                  score = Object.keys(curComment.votes).length
+              } else {
+                  score = 1;
+              }
+              console.log(score);
               if(score && score > topScore) {
                   topComment = curComment;
               }
